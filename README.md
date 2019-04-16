@@ -1,6 +1,6 @@
 # Anti-Captcha Python3 Wrapper
 
-## How to install
+## How to implement
 Drag and drop captcha.py into your project folder
 
 Using the API in your project:
