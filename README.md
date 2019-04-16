@@ -106,3 +106,55 @@ response = NoCaptchaTask(clientKey,websiteURL,websiteKey)
 print(response)
 ```
 Returns the taskId
+
+
+### FunCaptchaTask
+#### Paramaters
+
+| Paramater        | Type           | Value  |
+| -------------|-------------| -----|
+| clientKey| String | The client's API key |
+| proxy| String| Proxy for solving. (must be in the format: proxy:port)|
+| proxyType| String| Proxy type for the above proxy|
+| websiteURL| String| URL on which the captcha is located|
+| websitePublicKey| String| Funcaptcha public key <div id="funcaptcha" data-pkey="THIS_ONE"></div>|
+| userAgent| String| 	Browser's User-Agent which is used in emulation. It is required that you use a signature of a modern browser, otherwise Google will ask you to "update your browser".|
+
+
+How this is used with the API:
+
+```python
+from captcha import *
+clientKey = ' '
+proxyType = 'http'
+proxy = '8.8.8.8:8080'
+websiteURL = 'http:\/\/mywebsite.com\/recaptcha\/test.php'
+websitePublicKey = 'DE0B0BB7-1EE4-4D70-1853-31B835D4506B'
+userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36'
+response = FunCaptchaTask(clientKey,proxyType,proxy,websiteURL,websitePublicKey)
+print(response)
+```
+Returns the taskId
+
+
+### FunCaptchaTaskProxyless
+#### Paramaters
+
+| Paramater        | Type           | Value  |
+| -------------|-------------| -----|
+| clientKey| String | The client's API key |
+| websiteURL| String| URL on which the captcha is located|
+| websitePublicKey| String| Funcaptcha public key <div id="funcaptcha" data-pkey="THIS_ONE"></div>|
+
+
+How this is used with the API:
+
+```python
+from captcha import *
+clientKey = ' '
+websiteURL = 'http:\/\/mywebsite.com\/recaptcha\/test.php'
+websitePublicKey = 'DE0B0BB7-1EE4-4D70-1853-31B835D4506B'
+response = FunCaptchaTask(clientKey,websiteURL,websitePublicKey)
+print(response)
+```
+Returns the taskId
