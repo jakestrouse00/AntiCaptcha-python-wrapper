@@ -158,3 +158,60 @@ response = FunCaptchaTask(clientKey,websiteURL,websitePublicKey)
 print(response)
 ```
 Returns the taskId
+
+
+### SquareNetTextTask
+#### Paramaters
+
+| Paramater        | Type           | Value  |
+| -------------|-------------| -----|
+| clientKey| String | The client's API key |
+| body| String| File body encoded in base64. Make sure to send it without line breaks.|
+| objectName| String| Name of the object. Example: banana|
+| rowsCount| Integer| Number of grid rows. Min 2, max 5|
+| columnsCount| Integer| Number of grid columns. Min 2, max 5|
+
+returns the taskId
+### GeeTestTask
+#### Paramaters
+
+| Paramater        | Type           | Value  |
+| -------------|-------------| -----|
+| clientKey| String | The client's API key |
+| proxy| String| Proxy for solving. (must be in the format: proxy:port)|
+| proxyType| String| Proxy type for the above proxy|
+| websiteURL| String| URL on which the captcha is located|
+| gt| String| The domain key|
+|challenge|String| Changing token key. Make sure to grab fresh one for each captcha, otherwise you will be charged for error task.|
+| userAgent| String| 	Browser's User-Agent which is used in emulation. It is required that you use a signature of a modern browser, otherwise Google will ask you to "update your browser".|
+
+Returns the taskId
+
+### GeeTestTaskProxyless
+#### Paramaters
+
+| Paramater        | Type           | Value  |
+| -------------|-------------| -----|
+| clientKey| String | The client's API key |
+| websiteURL| String| URL on which the captcha is located|
+| gt| String| The domain key|
+|challenge|String| Changing token key. Make sure to grab fresh one for each captcha, otherwise you will be charged for error task.|
+
+Returns the taskId
+
+## Example
+### NoCaptchaTaskProxyless full example
+```python
+from captcha import *
+
+clientKey = 'dce6bcbb1a728ea8d871de6d169a2057'
+websiteURL = 'http:\/\/mywebsite.com\/recaptcha\/test.php'
+websiteKey = 'Lc_aCMTAAAAABx7u2N0D1XnVbI_v6ZdbM6rYf16'
+response = NoCaptchaTask(clientKey, websiteURL, websiteKey)
+
+result = getTaskResult(clientKey, response)
+# result is returned as json
+
+solution = result['gRecaptchaResponse']
+print(solution)
+```
