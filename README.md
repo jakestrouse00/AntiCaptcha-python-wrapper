@@ -3,7 +3,7 @@
 ## How to implement
 Drag and drop captcha.py into your project folder
 
-Using the API in your project:
+Using the wrapper in your project:
 ```python
 from captcha import *
 ```
@@ -25,7 +25,7 @@ This will return a float
 | clientKey| String | The client's API key |
 | taskId| Integer| ID which was obtained in createTask methods|
 
-How this is used with the API:
+How this is used with the wrapper:
 
 ```python
 from captcha import *
@@ -46,7 +46,7 @@ Returns the solution to the submited captcha in json
 | clientKey| String | The client's API key |
 | body| String| File body encoded in base64. Make sure to send it without line breaks.|
 
-How this is used with the API:
+How this is used with the wrapper:
 
 ```python
 from captcha import *
@@ -70,7 +70,7 @@ Returns the taskId
 | userAgent| String| 	Browser's User-Agent which is used in emulation. It is required that you use a signature of a modern browser, otherwise Google will ask you to "update your browser".|
 
 
-How this is used with the API:
+How this is used with the wrapper:
 
 ```python
 from captcha import *
@@ -95,7 +95,7 @@ Returns the taskId
 | websiteKey| String| Recaptcha website key <div class="g-recaptcha" data-sitekey="THAT_ONE"></div> |
 
 
-How this is used with the API:
+How this is used with the wrapper:
 
 ```python
 from captcha import *
@@ -121,7 +121,7 @@ Returns the taskId
 | userAgent| String| 	Browser's User-Agent which is used in emulation. It is required that you use a signature of a modern browser, otherwise Google will ask you to "update your browser".|
 
 
-How this is used with the API:
+How this is used with the wrapper:
 
 ```python
 from captcha import *
@@ -147,7 +147,7 @@ Returns the taskId
 | websitePublicKey| String| Funcaptcha public key <div id="funcaptcha" data-pkey="THIS_ONE"></div>|
 
 
-How this is used with the API:
+How this is used with the wrapper:
 
 ```python
 from captcha import *
